@@ -29,7 +29,7 @@ public class UserDetailsDAOImpl implements UserDetailsDAO{
 	}
 	
 
-/*public boolean save(UserDetails userdetails){
+public boolean save(UserDetails userdetails){
 
 		try {
 			log.debug("Start of method Save");
@@ -49,10 +49,10 @@ public class UserDetailsDAOImpl implements UserDetailsDAO{
 	
 	
 	
-}*/
+}
 	
 
-	/*public boolean update(UserDetails userdetails){
+	public boolean update(UserDetails userdetails){
 		try {
 			log.debug("Start of method Update");
 			
@@ -68,7 +68,7 @@ public class UserDetailsDAOImpl implements UserDetailsDAO{
 			return false;
 		}
 		
-	}*/
+	}
 	
 	@Transactional
 	public void saveOrUpdate(UserDetails userDetails) {
