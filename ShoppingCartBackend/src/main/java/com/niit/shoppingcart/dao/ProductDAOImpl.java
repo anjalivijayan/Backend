@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-
+import com.niit.shoppingcart.model.Category;
 import com.niit.shoppingcart.model.Product;
 @Transactional
 @Repository(value="productDAO")
@@ -114,7 +114,22 @@ public boolean save(Product product){
 		
 	}
 	
-	
+	@Transactional
+	public Product getByName(String name) {
+		String hql = "from Category where name=" + "'"+ name +"'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<Product> listProduct = (List<Product>) query.list();
+		
+		if (listProduct != null && !listProduct.isEmpty()) {
+			return listProduct.get(0);
+		}
+		
+		return null;
+
+}
+
 	
 	
 	

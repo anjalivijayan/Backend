@@ -18,8 +18,12 @@ public interface CategoryDAO {
 	public boolean delete(Category category);
 	
 	public  Category get(String id);
+	
+	public Category getByName(String name);
 
 	public List<Category>  list();
+	
+	
 	
 	
 	

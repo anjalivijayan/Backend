@@ -16,6 +16,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
+import com.niit.shoppingcart.model.Cart;
 import com.niit.shoppingcart.model.Category;
 import com.niit.shoppingcart.model.Product;
 import com.niit.shoppingcart.model.Supplier;
@@ -32,7 +33,7 @@ import com.niit.shoppingcart.model.User;*/
 
 
 @Configuration
-@ComponentScan("com.niit.shoppingcart")
+@ComponentScan("com.niit")
 @EnableTransactionManagement
 public class ApplicationContext{
 	
@@ -58,7 +59,8 @@ public class ApplicationContext{
     	return properties;
     }
     
-    @Autowired
+    @SuppressWarnings("deprecation")
+	@Autowired
     @Bean(name = "sessionFactory")
     public SessionFactory getSessionFactory(DataSource dataSource) {
     	LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
@@ -67,6 +69,8 @@ public class ApplicationContext{
     	sessionBuilder.addAnnotatedClass(Supplier.class);
     	sessionBuilder.addAnnotatedClasses(Product.class);
     	sessionBuilder.addAnnotatedClass(UserDetails.class);
+    	sessionBuilder.addAnnotatedClass(Cart.class);
+    	sessionBuilder.buildMappings();
     	return sessionBuilder.buildSessionFactory();
     }
     

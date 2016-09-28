@@ -1,10 +1,14 @@
 package com.niit.shoppingcart.model;
 
+import java.io.Serializable;
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-
+import javax.validation.constraints.NotNull;
 
 import org.springframework.stereotype.Component;
 
@@ -12,7 +16,8 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table
 @Component
-public class Category {
+public class Category implements Serializable {
+	
 	
 	@Id
 	private String id;
@@ -21,10 +26,24 @@ public class Category {
 	
 	private String name;
 
+	
 	private String description;
-	public String getId(){
+	
+	
+	
+	@OneToMany(mappedBy="category",fetch=FetchType.EAGER)
+	private Set<Product> products;
+	
+	
+	
+	public Set<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}
+	public String getId() {
 		return id;
-		
 	}
 	public void setId(String id) {
 		this.id = id;

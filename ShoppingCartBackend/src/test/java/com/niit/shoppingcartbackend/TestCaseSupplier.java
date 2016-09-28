@@ -65,10 +65,10 @@ public class TestCaseSupplier {
 			@Test
 			public void supplierGetTestCase()
 			{
-				supplier= supplierDAO.get("SUP01");
+				supplier= supplierDAO.get("SUP04");
 				System.out.println(supplier.getName());
 				System.out.println(supplier.getAddress());
-				assertEquals(supplier.getName(),"SUPabc");
+				assertEquals(supplier.getName(),"vcbvj");
 			}
 			@Test
 			public void supplierDeleteTestCase()

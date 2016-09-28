@@ -50,10 +50,10 @@ public class TestCaseProduct {
 	@Test
 	public void addProductTestCase()
 	{
-		product.setId("Mob_03");
-		product.setName("lenova");
-		product.setDescription("laptop");
-		product.setPrice(40000);
+		product.setId("Mob_05");
+		product.setName("sfgdkjfh");
+		product.setDescription("ehd");
+		product.setPrice(20000);
 		
 		/*boolean flag= productDAO.save(product);
     	assertEquals(flag,true);*/

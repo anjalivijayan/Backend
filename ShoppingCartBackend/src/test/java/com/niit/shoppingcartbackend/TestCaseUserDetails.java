@@ -47,12 +47,12 @@ public class TestCaseUserDetails {
     @Test
     public void userDetailsAddTestcase()
     {
-    	userDetails.setId("U0168");
-    	userDetails.setName("dghdgfhd");
-    	userDetails.setAddress("bcgfjd");
-    	userDetails.setPassword("gdj455");
-    	userDetails.setMail("hdey@gmail.com");
-    	userDetails.setContact("9994565425");;
+    	userDetails.setId("U0169");
+    	userDetails.setName("bjhghf");
+    	userDetails.setAddress("tuqwiodehf");
+    	userDetails.setPassword("abcdef");
+    	userDetails.setMail("abc@gmail.com");
+    	userDetails.setContact("8081144689");;
     	
     	boolean flag= userDetailsDAO.save(userDetails);
     	assertEquals(flag,true);
@@ -63,7 +63,7 @@ public class TestCaseUserDetails {
 	@Test
 	public void userdetailsGetTestCase()
 	{
-		userDetails=userDetailsDAO.get("U0167");
+		userDetails=userDetailsDAO.get("U0168");
 		System.out.println(userDetails.getName());
 		System.out.println(userDetails.getAddress());
 		System.out.println(userDetails.getMail());

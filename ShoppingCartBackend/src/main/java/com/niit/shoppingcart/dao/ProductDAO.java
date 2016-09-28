@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.niit.shoppingcart.model.Category;
 import com.niit.shoppingcart.model.Product;
 
 
@@ -17,9 +18,12 @@ public interface ProductDAO {
 	
 	public boolean delete(Product product);
 	
+	public Product getByName(String name);
+	
 	public  Product get(String id);
 
 	public List<Product>  list();
+	
 	
 	
 	
