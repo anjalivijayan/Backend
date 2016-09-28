@@ -12,11 +12,11 @@ import com.niit.shoppingcart.model.UserDetails;
 public interface UserDetailsDAO {
 
 	
-	/*public boolean save(UserDetails userDetails);
+	public boolean save(UserDetails userDetails);
 	
-	public boolean update(UserDetails userDetails);*/
+	public boolean update(UserDetails userDetails);
 	
-	public void saveOrUpdate(UserDetails userDetails);
+	//public void saveOrUpdate(UserDetails userDetails);
 
 	
 	public boolean delete(UserDetails userDetails);
