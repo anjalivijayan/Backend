@@ -50,16 +50,16 @@ public class TestCaseSupplier {
 		    	
 		    }
 		    @Test
-		    public void supplierAddTestcase()
+		    public boolean supplierAddTestcase()
 		    {
 		    	supplier.setId("SUP04");
 		    	supplier.setName("vcbvj");
 		    	supplier.setAddress("tfehiwj");
 		    	
-		    	boolean flag= supplierDAO.save(supplier);
+		    	boolean flag= supplierDAO.saveOrUpdate(supplier);
 		    	assertEquals(flag,true);
 		    	
-		    	
+		    	return true;
 		    	
 		    }	    
 			@Test
@@ -71,14 +71,17 @@ public class TestCaseSupplier {
 				assertEquals(supplier.getName(),"vcbvj");
 			}
 			@Test
-			public void supplierDeleteTestCase()
+			public boolean supplierDeleteTestCase()
 			{	
 				supplier.setId("SUP03");
 				
 			boolean flag=	supplierDAO.delete(supplier);
 			
 			assertEquals("supplierDeleteTestCase", flag,true);
-			}
+			
+			return true;
+			
 	}
+}
 
 

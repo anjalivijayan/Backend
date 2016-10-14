@@ -20,9 +20,10 @@ public class Cart {
 	
 	
 	
-	//@GeneratedValue(strategy=GenerationType.IDENTITY) 
+	
 	@Id 
-	private int id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY) 
+	private String id;
 	
 	
 	private int total;
@@ -30,26 +31,26 @@ public class Cart {
 	private String productName;
 	private int price;
 	private int quantity;
-	private char status;
+	private String status;
 	
 	
-	@Transient
+	
 	@ManyToOne
 	@JoinColumn(name = "user_id",nullable = true, updatable = true, insertable = true)
 	private UserDetails user;
 	
 	
 	
-	@Transient
+
 	@ManyToOne
 	@JoinColumn(name = "product_id",nullable = true, updatable = true, insertable = true)
     private Product uproducts;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -85,12 +86,12 @@ public class Cart {
 		this.quantity = quantity;
 	}
 
-	public char getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(char status) {
-		this.status = status;
+	public void setStatus(String string) {
+		this.status = string;
 	}
 
 	public UserDetails getUser() {

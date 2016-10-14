@@ -34,7 +34,7 @@ public class CategoryTest {
 	/*categoryDAO.save(category);*/
 	
 		
-		if (categoryDAO.save(category)== true)
+		if (categoryDAO.saveOrUpdate(category)== true)
 		{
 			System.out.println("Category created successfully");
 		}

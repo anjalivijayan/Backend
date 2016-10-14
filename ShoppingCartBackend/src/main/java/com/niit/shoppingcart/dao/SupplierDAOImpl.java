@@ -27,13 +27,13 @@ import com.niit.shoppingcart.model.Supplier;
 		}
 		
 
-	public boolean save(Supplier supplier){
+	public boolean saveOrUpdate(Supplier supplier){
 
 		
 			try {
 				log.debug("Start of method Save");
 
-				sessionFactory.getCurrentSession().save(supplier);
+				sessionFactory.getCurrentSession().saveOrUpdate(supplier);
 				
 				log.debug("End of method Save");
 				return true;
@@ -45,7 +45,7 @@ import com.niit.shoppingcart.model.Supplier;
 	}
 		
 		
-		public boolean update(Supplier supplier){
+		/*public boolean update(Supplier supplier){
 			try {
 				log.debug("Start of method Update");
 				
@@ -59,7 +59,7 @@ import com.niit.shoppingcart.model.Supplier;
 				return false;
 			}
 			
-		}
+		}*/
 
 		public boolean delete(Supplier supplier){
 			try {

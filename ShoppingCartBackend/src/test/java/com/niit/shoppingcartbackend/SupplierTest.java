@@ -33,7 +33,7 @@ public class SupplierTest {
 			
 			supplier.setAddress("abcd");
 		
-			supplierDAO.save(supplier);
+			supplierDAO.saveOrUpdate(supplier);
 			
 			/*if (supplierDAO.save(supplier)== true)
 			{

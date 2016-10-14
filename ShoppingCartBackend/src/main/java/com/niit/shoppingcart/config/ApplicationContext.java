@@ -43,7 +43,7 @@ public class ApplicationContext{
     public DataSource getH2DataSource() {
     	DriverManagerDataSource dataSource= new DriverManagerDataSource();
     	dataSource.setDriverClassName("org.h2.Driver");
-    	dataSource.setUrl("jdbc:h2:tcp://localhost/~/NIITDB");
+    	dataSource.setUrl("jdbc:h2:tcp://localhost/~/NIITDB1");
     	dataSource.setUsername("sa");
     	dataSource.setPassword("");
     	
@@ -54,8 +54,8 @@ public class ApplicationContext{
     private Properties getHibernateProperties() {
     	Properties properties = new Properties();
     	properties.put("hibernate.show_sql", "true");
-    
-    	properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+       	properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+    	properties.put("hibernate.hbm2ddl.auto", "update");
     	return properties;
     }
     

@@ -29,30 +29,22 @@ public class UserDetailsDAOImpl implements UserDetailsDAO{
 	}
 	
 
-public boolean save(UserDetails userdetails){
-
+	public boolean saveOrUpdate(UserDetails userDetails) {
 		try {
-			log.debug("Start of method Save");
-			
-			sessionFactory.getCurrentSession().save(userdetails);
-			
-			log.debug("End of method Save");
+			log.debug("starting of the method save");
+			sessionFactory.getCurrentSession().saveOrUpdate(userDetails);
+			log.debug("ending of the method save");
 			return true;
 		} catch (Exception e) {
-			log.error("Exception" + e.getMessage());
-			
+			log.error("exception occurred in save method" + e.getMessage());
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
 			return false;
 		}
-	
-	
-	
-	
-}
-	
+        
+	}
 
-	public boolean update(UserDetails userdetails){
+	/*public boolean update(UserDetails userdetails){
 		try {
 			log.debug("Start of method Update");
 			
@@ -68,13 +60,13 @@ public boolean save(UserDetails userdetails){
 			return false;
 		}
 		
-	}
+	}*/
 	
-	@Transactional
+	/*@Transactional
 	public void saveOrUpdate(UserDetails userDetails) {
 		sessionFactory.getCurrentSession().saveOrUpdate(userDetails);
 
-	}
+	}*/
 
 	
 	

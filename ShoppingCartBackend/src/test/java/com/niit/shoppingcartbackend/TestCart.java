@@ -6,8 +6,7 @@ import com.niit.shoppingcart.dao.CartDAO;
 import com.niit.shoppingcart.dao.ProductDAO;
 import com.niit.shoppingcart.dao.UserDetailsDAO;
 import com.niit.shoppingcart.model.Cart;
-import com.niit.shoppingcart.model.Product;
-import com.niit.shoppingcart.model.UserDetails;
+
 
 public class TestCart {
 
@@ -25,14 +24,14 @@ public static void main(String[] args) {
 
 		
 		//Product pr=productDAO.get("p14");
-		cart.setId(02);
+		//cart.setId(02);
 		cart.setTotal(3000);
-		cart.setProductName("Lamp");
-		cart.setQuantity(2);
-		cart.setStatus('N');
-		cart.setPrice(10000);
-		cart.setUser(userDAO.get("U234"));
-		cart.setProduct(productDAO.get("P12"));
+		cart.setProductName("LAMP");
+		cart.setQuantity(1);
+		//cart.setStatus('N');
+		cart.setPrice(3000);
+		cart.setUser(userDAO.get("U126"));
+		cart.setProduct(productDAO.get("P02"));
 		//cart.setUser(us);
 		//cart.setProduct(p);
 		cartDAO.saveOrUpdate(cart);

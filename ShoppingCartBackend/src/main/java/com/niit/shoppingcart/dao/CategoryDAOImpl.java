@@ -28,18 +28,20 @@ public class CategoryDAOImpl implements CategoryDAO{
 	}
 	
 
-public boolean save(Category category){
+public boolean saveOrUpdate(Category category){
 
 	
 		try {
+			System.out.println("dsdsd");
 			log.debug("Start of method Save");
 		
-			sessionFactory.getCurrentSession().save(category);
+			sessionFactory.getCurrentSession().saveOrUpdate(category);
 			
 			log.debug("End of method save");
 			return true;
 			}
 		 catch (Exception e) {
+			 System.out.println("dddddddddddddddd4444444"+category.getId());
 			log.error("Exception" + e.getMessage());
 			e.printStackTrace();
 			return false;
@@ -47,11 +49,11 @@ public boolean save(Category category){
 }
 	
 	
-	public boolean update(Category category){
+	/*public boolean update(Category category){
 		try {
 			log.debug("Start of method Update");
 			
-			sessionFactory.getCurrentSession().update(category);
+			sessionFactory.getCurrentSession().saveOrUpdate(category);
 			
 			log.debug("End of method Update");
 			return true;
@@ -61,7 +63,7 @@ public boolean save(Category category){
 			return false;
 		}
 		
-	}
+	}*/
 
 	public boolean delete(Category category){
 		try {

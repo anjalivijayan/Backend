@@ -50,12 +50,12 @@ public class TestCaseCategory {
 	    @Test
 	    public void categoryAddTestcase()
 	    {
-	    	category.setId("cate123");
-	    	category.setName("category");
-	    	category.setDescription("category1");	
-	    	boolean flag= categoryDAO.save(category);
+	    	category.setId("CATE11");
+	    	category.setName("BED");
+	    	category.setDescription("CATEGORY BED");	
+	    	boolean flag= categoryDAO.saveOrUpdate(category);
 	    	assertEquals(flag,true);
-	    	
+	    
 	    	
 	    	
 	    }	    
@@ -69,9 +69,9 @@ public class TestCaseCategory {
 			
 			
 			
-		}*/
+		}
 		
-		/*@Test
+		@Test
 		public void deleteCategoryTestCase()
 		{	
 			category.setId("anc34");
@@ -79,10 +79,10 @@ public class TestCaseCategory {
 		boolean flag=	categoryDAO.delete(category);
 		
 		assertEquals("delete category", flag,true);
+		return true;
 			
-		}*/
-		
-		
+		}
+		*/
 		
 
 

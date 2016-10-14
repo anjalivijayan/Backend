@@ -36,16 +36,16 @@ public class TestCaseUserDetails {
     }
     
      @Test
-    public void userDetailsListTestCase()
+    public boolean userDetailsListTestCase()
     {
     	List<UserDetails> list = userDetailsDAO.list();
     	int rowCount= list.size();
     	assertEquals("UserDetails List Test Case ", rowCount,1);
-    	
+    	return true;
     	
     }
     @Test
-    public void userDetailsAddTestcase()
+    public boolean userDetailsAddTestcase()
     {
     	userDetails.setId("U0169");
     	userDetails.setName("bjhghf");
@@ -54,14 +54,14 @@ public class TestCaseUserDetails {
     	userDetails.setMail("abc@gmail.com");
     	userDetails.setContact("8081144689");;
     	
-    	boolean flag= userDetailsDAO.save(userDetails);
+    	boolean flag= userDetailsDAO.saveOrUpdate(userDetails);
     	assertEquals(flag,true);
     	
-    	
+    	return true;
     	
     }	    
 	@Test
-	public void userdetailsGetTestCase()
+	public boolean userdetailsGetTestCase()
 	{
 		userDetails=userDetailsDAO.get("U0168");
 		System.out.println(userDetails.getName());
@@ -69,18 +69,20 @@ public class TestCaseUserDetails {
 		System.out.println(userDetails.getMail());
 		System.out.println(userDetails.getContact());
 		assertEquals(userDetails.getName(),"Anndsf");
-		
+		return true;
 		
 		
 	}
 	@Test
-	public void userdetailsDeleteTestCase()
+	public boolean userdetailsDeleteTestCase()
 	{	
 		userDetails.setId("U0167");
 		
 	boolean flag=	userDetailsDAO.delete(userDetails);
 	
 	assertEquals("userdetailsDeleteTestCase", flag,true);
+	
+	return true;
 	}
 
 }

@@ -6,20 +6,20 @@ import com.niit.shoppingcart.model.Cart;
 
 public interface CartDAO {
 	
-public Cart get(int id);
+public Cart get(String id);
 	
 	public void saveOrUpdate(Cart cart);
 
 	public List<Cart> list();
 
-	public List<Cart> userCartList(String uID);
+	public List<Cart> userCartList(String user_id);
 	
-	public Cart getByUserId(String uID);
+	public Cart getByUserId(String user_id);
 
-	public String delete(int id);
+	public boolean delete(Cart cart);
 	
 	public long getTotalAmount(String id);
 	
-	public void checkOut(String uID);
+	public void checkOut(String user_id);
 	
 }

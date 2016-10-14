@@ -28,13 +28,13 @@ public class ProductDAOImpl implements ProductDAO{
 	}
 	
 
-public boolean save(Product product){
+public boolean saveOrUpdate(Product product){
 
 	
 		try {
 			log.debug("Starting of the method save");
 	
-			sessionFactory.getCurrentSession().save(product);
+			sessionFactory.getCurrentSession().saveOrUpdate(product);
 			
 			log.debug("Ending of the method save");
 			return true;
@@ -46,7 +46,7 @@ public boolean save(Product product){
 }
 	
 
-	public boolean update(Product product){
+	/*public boolean update(Product product){
 		try {
 			log.debug("Starting of the method save");
 			sessionFactory.getCurrentSession().update(product);
@@ -59,7 +59,7 @@ public boolean save(Product product){
 			return false;
 		}
 		
-	}
+	}*/
 
 	public boolean delete(Product product){
 		try {
